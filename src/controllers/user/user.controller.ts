@@ -9,7 +9,6 @@ export class UserController {
     }
 
     @UseGuards(AuthGuard('jwt'))
-
     @Get()
     retornarUsuarios() {
         return this.userService.getUsers()
