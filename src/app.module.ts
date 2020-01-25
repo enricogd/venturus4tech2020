@@ -13,6 +13,8 @@ import { userSchema } from './domain/schemas/user.schema';
 import { UserActivityController } from './controllers/user-activity/user-activity.controller';
 import { userActivitySchema } from './domain/schemas/user-activity.schema';
 import { UserActivityService } from './services/user-activity/user-activity.service';
+import { UserActivityRepository } from './repositories/user-activity-repository/user-activity.repository';
+import { WebsocketGateway } from './websocket/websocket.gateway';
 
 @Module({
   imports: [
@@ -28,11 +30,11 @@ import { UserActivityService } from './services/user-activity/user-activity.serv
     JwtModule.register(
       {
         secret: secretKey, signOptions: {
-          expiresIn: '60m'
+          expiresIn: '600m'
         }
       })
   ],
   controllers: [AppController, UserController, AuthController, UserActivityController],
-  providers: [AppService, UserService, UserRepository, AuthService, JwtStrategy, UserActivityService],
+  providers: [AppService, UserService, UserRepository, AuthService, JwtStrategy, UserActivityService, UserActivityRepository, WebsocketGateway],
 })
 export class AppModule {}
