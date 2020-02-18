@@ -18,7 +18,7 @@ import { WebsocketGateway } from './websocket/websocket.gateway';
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb://localhost:27017/admin',
+    MongooseModule.forRoot('mongodb+srv://enricogd:Nvu6bW19fFWocUE1@cluster0-uajsi.mongodb.net/test?retryWrites=true&w=majority',
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
